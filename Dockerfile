@@ -1,9 +1,11 @@
 FROM ubuntu:18.04
-LABEL maintainer="KW_Rosyuku (https://twitter.com/KW_Rosyuku)"
+# FROM ubuntu:20.04
+# LABEL maintainer="KW_Rosyuku (https://twitter.com/KW_Rosyuku)"
 LABEL version="0.1.2"
-LABEL discription="リモートデスクトップ接続とSSH接続が可能なUbuntu:18.04のコンテナです。"
+# LABEL discription="リモートデスクトップ接続とSSH接続が可能なUbuntu:18.04のコンテナです。"
 
-ARG host_name="Challenger"
+# ARG host_name="Challenger"
+ARG host_name="focal"
 ENV DEBIAN_FRONTEND=noninteractive \
     HOSTNAME=$host_name
 
@@ -53,7 +55,7 @@ ADD ./config/supervisord/* /etc/supervisor/conf.d/
 #Install Preferred package
 RUN apt-get update && \
     apt-get install -y \
-    git tig gedit nano \
+    git tig gedit vim \
     wget curl net-tools firefox\
     build-essential software-properties-common
 
@@ -62,3 +64,4 @@ RUN apt-get clean && apt-get autoremove && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 CMD ["bash", "-c", "/usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
+
