@@ -2,29 +2,23 @@
 
 ## 概要
 
-改造版
-
-+ Fork 元
-  + [GitHub](https://github.com/Rosyuku/ubuntu-rdp)
-  + [Docker Hub](https://hub.docker.com/r/rosyuku/ubuntu-rdp)
+Ubuntu に Xfce をインストールし、 RDP 接続を可能したもので、[@Rosyuku](https://github.com/Rosyuku) の [GitHub | ubuntu-rdp](https://github.com/Rosyuku/ubuntu-rdp) (and [Docker Hub | ubuntu-rdp](https://hub.docker.com/r/rosyuku/ubuntu-rdp)) を Fork し、カスタマイズしたものです
+ 
+多謝 (-人-)
 
 ## ローカルで実行起動する
 
 + Docker Compose で起動する
 
 ```
-docker build . --tag hogehoge
-docker run --rm -it -p 13389:3389 -p 10022:22 --shm-size=256m hogehoge
+git clone https://github.com/iganari/ubuntu-rdp.git
+cd ubuntu-rdp
 ```
-
-
 ```
 docker-compose up --build
 ```
 
-```
-127.0.0.1:33890
-```
++ RDP ツール (例えば Microsoft Remote Desktop) を用いて `127.0.0.1:33890` にログインする
 
 ![](./img/01.png)
 
@@ -38,11 +32,19 @@ WIP
 
 ## 自分好みにカスタマイズする
 
-### [お手軽] Docker hub のイメージをカスタマイズする
++ 推奨 ---> [自分でイメージから作成する]
++ お手軽にやりたい人 ---> [Docker hub のイメージをカスタマイズする]
+
+
+### 自分でイメージから作成する
+
+この Repository を Fork するか、本家の Respotiroy を Fork してカスタマイズする
+
+それをプライベートのレジストリに登録し使用する
+
+### Docker hub のイメージをカスタマイズする
 
 WIP
 
-### [推奨] 自分でイメージから作成する
 
-この repo を fork するか、大本を fork してカスタマイズしていく
 
