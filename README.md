@@ -2,11 +2,11 @@
 
 ## 概要
 
-Ubuntu に Xfce をインストールし、 RDP 接続を可能したもので、[@Rosyuku](https://github.com/Rosyuku) の [GitHub | ubuntu-rdp](https://github.com/Rosyuku/ubuntu-rdp) (and [Docker Hub | ubuntu-rdp](https://hub.docker.com/r/rosyuku/ubuntu-rdp)) を Fork し、カスタマイズしたものです
+Ubuntu に Xfce をインストールし、 RDP 接続を可能したもので、[@Rosyuku](https://github.com/Rosyuku) の [GitHub | Rosyuku/ubuntu-rdp](https://github.com/Rosyuku/ubuntu-rdp) (and [Docker Hub | rosyuku/ubuntu-rdp](https://hub.docker.com/r/rosyuku/ubuntu-rdp)) を Fork し、カスタマイズしたものです
  
 多謝 (-人-)
 
-## ローカルで実行起動する
+## Dockerfile から起動する
 
 + Docker Compose で起動する
 
@@ -26,17 +26,24 @@ docker-compose up --build
 
 ![](./img/03.png)
 
-## Docker Hub に登録している版を起動する
+## コンテナイメージを pull して起動する
 
-WIP
++ [Docker Hub | iganarix/ubuntu-rdp](https://hub.docker.com/repository/docker/iganarix/ubuntu-rdp) からコンテナイメージを直接取得して起動する
+
+```
+docker run --rm -it -p 13389:3389 -p 10022:22 --shm-size=256m iganarix/ubuntu-rdp:latest
+```
+
++ RDP ツール (例えば Microsoft Remote Desktop) を用いて `127.0.0.1:13389` にログインする
+
+![](./img/04.png)
 
 ## 自分好みにカスタマイズする
 
-+ 推奨 ---> [自分でイメージから作成する]
-+ お手軽にやりたい人 ---> [Docker hub のイメージをカスタマイズする]
++ 推奨 ---> [自分でイメージから作成する](./README.md#自分で-dockerfile-から作成する)
++ お手軽にやりたい人 ---> [Docker hub のイメージをカスタマイズする](./README.md#docker-hub-のイメージをカスタマイズする)
 
-
-### 自分でイメージから作成する
+### 自分で Dockerfile から作成する
 
 この Repository を Fork するか、本家の Respotiroy を Fork してカスタマイズする
 
@@ -44,7 +51,13 @@ WIP
 
 ### Docker hub のイメージをカスタマイズする
 
-WIP
+[Docker Hub | iganarix/ubuntu-rdp](https://hub.docker.com/repository/docker/iganarix/ubuntu-rdp) のイメージを Dockerfile の FROM に使ってカスタマイズする
 
++ Dockerfile
 
+```
+FROM iganarix/ubuntu-rdp:latest
 
+~
+~
+```
