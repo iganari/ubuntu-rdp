@@ -14,8 +14,8 @@ services:
       shm_size: $shm_size
       tty: true
       ports: 
-        - $RDPport:3389 #RDP
-        - $SSHport:22 #SSH
+        - $RDPport:3389  ### RDP
+        - $SSHport:22    ### SSH
       command:
         bash -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf'
       volumes: 
