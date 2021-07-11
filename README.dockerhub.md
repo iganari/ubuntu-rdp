@@ -8,7 +8,7 @@ Ubuntu に Xfce をインストールし、 RDP 接続を可能したもので�
 
 ## コンテナイメージを pull して起動する
 
-+ [Docker Hub | iganarix/ubuntu-rdp](https://hub.docker.com/repository/docker/iganarix/ubuntu-rdp) からコンテナイメージを直接取得して起動する
++ [Docker Hub | iganarix/ubuntu-rdp](https://hub.docker.com/r/iganarix/ubuntu-rdp) からコンテナイメージを直接取得して起動する
 
 ```
 docker run --rm -it -p 13389:3389 -p 10022:22 --shm-size=256m iganarix/ubuntu-rdp:latest
@@ -24,7 +24,7 @@ docker run --rm -it -p 13389:3389 -p 10022:22 --shm-size=256m iganarix/ubuntu-rd
 
 ## 自分好みにカスタマイズする
 
-[Docker Hub | iganarix/ubuntu-rdp](https://hub.docker.com/repository/docker/iganarix/ubuntu-rdp) のコンテナイメージを Dockerfile の FROM に使ってカスタマイズする
+[Docker Hub | iganarix/ubuntu-rdp](https://hub.docker.com/r/iganarix/ubuntu-rdp) のコンテナイメージを Dockerfile の FROM に使ってカスタマイズする
 
 + Dockerfile
 
