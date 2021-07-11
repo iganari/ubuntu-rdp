@@ -40,7 +40,7 @@ docker run --rm -it -p 13389:3389 -p 10022:22 --shm-size=256m iganarix/ubuntu-rd
 
 ## 自分好みにカスタマイズする
 
-+ 推奨 ---> [自分でイメージから作成する](./README.md#自分で-dockerfile-から作成する)
++ 推奨 ---> [自分で Dockerfile から作成する](./README.md#自分で-dockerfile-から作成する)
 + お手軽にやりたい人 ---> [Docker hub のイメージをカスタマイズする](./README.md#docker-hub-のイメージをカスタマイズする)
 
 ### 自分で Dockerfile から作成する
@@ -61,3 +61,7 @@ FROM iganarix/ubuntu-rdp:latest
 ~
 ~
 ```
+
+## まとめ
+
+Have fan! :)
