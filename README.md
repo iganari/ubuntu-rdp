@@ -6,14 +6,17 @@ Ubuntu に Xfce をインストールし、 RDP 接続を可能したもので�
  
 多謝 (-人-)
 
-## Dockerfile から起動する
+## Docker Compose を使って起動する
 
-+ Docker Compose で起動する
++ Repository を Clone
 
 ```
 git clone https://github.com/iganari/ubuntu-rdp.git
 cd ubuntu-rdp
 ```
+
++ Docker Compose で起動する
+
 ```
 docker-compose up --build
 ```
